@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">BattleShip</string>
+    <string name="title_activity_single_battle" translatable="false">SingleBattle</string>
+    <string name="title_activity_choose_player_point" translatable="false">PlayerChoose</string>
+    <string name="title_service_deliver" translatable="false">MapDeliver</string>
+
+    <string name="play_start" translatable="false">Lets Play</string>
+
+    <string name="Dialog_Title">Is this all right?</string>
+    <string name="Dialog_Yes">Yes</string>
+    <string name="Dialog_No" translatable="false">No</string>
+    <string name="Dialog_Cancel" translatable="false">Cancel</string>
+
+    <string name="random_play_mode" translatable="false">Random Play</string>
+    <string name="single_play_mode" translatable="false">Single Play</string>
+    <string name="tutorial_mode" translatable="false">Tutorial</string>
+
+    <string name="tutorial_description">Select points. Choice 5 points, and check "OK".</string>
+
+    <string name="choose_map_title_choose">Choose</string>
+    <string name="choose_map_title_points">Points</string>
+    <string name="Enemy_Map_String">Enemy Map</string>
+    <string name="Player_Area_Title">Your Area</string>
+    <string name="Hit_String">Hit</string>
+    <string name="All_String">All</string>
+
+    <string name="score_title" translatable="false">Score</string>
+    <string name="player_score" translatable="false">Player</string>
+    <string name="enemy_score" translatable="false">Enemy</string>
+
+    <string name="end_message_win">You Win !</string>
+    <string name="end_message_lose">You lose</string>
+    <string name="end_message">Game End!</string>
+
+    <string name="battle_column_A" translatable="false">A</string>
+    <string name="battle_column_B" translatable="false">B</string>
+    <string name="battle_column_C" translatable="false">C</string>
+    <string name="battle_column_D" translatable="false">D</string>
+    <string name="battle_column_E" translatable="false">E</string>
+
+    <string name="battle_row_1" translatable="false">1</string>
+    <string name="battle_row_2" translatable="false">2</string>
+    <string name="battle_row_3" translatable="false">3</string>
+    <string name="battle_row_4" translatable="false">4</string>
+    <string name="battle_row_5" translatable="false">5</string>
+</resources>

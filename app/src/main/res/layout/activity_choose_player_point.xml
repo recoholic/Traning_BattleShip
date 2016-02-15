@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context=".ChoosePlayer">
+
+    <TextView
+        android:id="@+id/Enemy_Map_String"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/Enemy_Area_Title_Size"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="6"
+        android:rowCount="6"
+        android:id="@+id/selectGrid"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:visibility="visible"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_A"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_B"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_C"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_D"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_E"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:padding="8dp"
+            android:text="@string/battle_row_1"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseA1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseB1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseC1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseD1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseE1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:padding="8dp"
+            android:text="@string/battle_row_2"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseA2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseB2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseC2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseD2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseE2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:padding="8dp"
+            android:text="@string/battle_row_3"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseA3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseB3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseC3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseD3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseE3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:padding="8dp"
+            android:text="@string/battle_row_4"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseA4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseB4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseC4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseD4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseE4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:padding="8dp"
+            android:text="@string/battle_row_5"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseA5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseB5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseC5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseD5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/chooseE5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+    </GridLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

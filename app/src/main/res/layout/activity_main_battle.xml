@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainBattle">
+
+    <TextView
+        android:id="@+id/Enemy_Map_String"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:text="@string/Enemy_Map_String"
+        android:textSize="@dimen/Enemy_Area_Title_Size"
+        android:layout_centerHorizontal="true"/>
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="6"
+        android:rowCount="6"
+        android:layout_below="@+id/Enemy_Map_String"
+        android:layout_centerHorizontal="true"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_A"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_B"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_C"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_D"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:layout_row="0"
+            android:gravity="center_horizontal"
+            android:text="@string/battle_column_E"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:padding="8dp"
+            android:text="@string/battle_row_1"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyA1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyB1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyC1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyD1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyE1"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="1"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:padding="8dp"
+            android:text="@string/battle_row_2"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyA2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyB2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyC2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyD2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyE2"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:padding="8dp"
+            android:text="@string/battle_row_3"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyA3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyB3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyC3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyD3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyE3"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="3"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:padding="8dp"
+            android:text="@string/battle_row_4"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyA4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyB4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyC4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyD4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyE4"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="4"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:padding="8dp"
+            android:text="@string/battle_row_5"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyA5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="1"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyB5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="2"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyC5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="3"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyD5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="4"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/enemyE5"
+            android:layout_width="@dimen/battle_attack_button_height"
+            android:layout_height="@dimen/battle_attack_button_width"
+            android:layout_column="5"
+            android:layout_row="5"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+
+    </GridLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/gridLayout">
+
+        <TextView
+            android:id="@+id/playerAreaTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="@string/Player_Area_Title"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="5"
+            android:rowCount="5"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/playerAreaTitle">
+
+            <Button
+                android:id="@+id/playerA1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerB1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerC1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:layout_column="2"
+                android:layout_row="0"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerD1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:layout_column="3"
+                android:layout_row="0"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerE1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:layout_column="4"
+                android:layout_row="0"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerA2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerB2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerC2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerD2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerE2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerA3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerB3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerC3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerD3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerE3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerA4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerB4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerC4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerD4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerE4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerA5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerB5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerC5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerD5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+
+            <Button
+                android:id="@+id/playerE5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/battle_defence_button_height"
+                android:layout_height="@dimen/battle_defence_button_width"
+                android:clickable="false"/>
+        </GridLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/gridLayout"
+        android:layout_toStartOf="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/score_title"
+            android:gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/scoreTitle"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="5"
+            android:rowCount="2"
+            android:orientation="vertical"
+            android:layout_below="@+id/scoreTitle"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/gridLayout3">
+
+            <TextView
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textAppearance="?android:attr/textAppearance"
+                android:text="@string/player_score" />
+
+            <TextView
+
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textAppearance="?android:attr/textAppearance"
+                android:text="@string/enemy_score" />
+
+            <TextView
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:visibility="visible"
+                android:text="@string/Hit_String"/>
+
+            <TextView
+                android:layout_column="1"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:visibility="visible"
+                android:text="@string/Hit_String"/>
+
+            <TextView
+                android:layout_column="2"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:visibility="visible"
+                android:id="@+id/playerScoreCount"/>
+
+            <TextView
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_column="2"
+                android:layout_row="1"
+                android:visibility="visible"
+                android:id="@+id/enemyScoreCount"/>
+
+            <TextView
+                android:layout_column="3"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:visibility="visible"
+                android:text="@string/All_String"/>
+
+            <TextView
+                android:layout_column="3"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:visibility="visible"
+                android:text="@string/All_String"/>
+
+            <TextView
+                android:layout_column="4"
+                android:layout_row="0"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:visibility="visible"
+                android:id="@+id/playerCount"/>
+
+            <TextView
+                android:layout_column="4"
+                android:layout_row="1"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:visibility="visible"
+                android:id="@+id/enemyCount"/>
+        </GridLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">戦艦ゲーム</string>
+    <string name="Player_Area_Title">あなたの陣地</string>
+    <string name="Dialog_Title">これでいいですか</string>
+    <string name="Dialog_Yes">はい</string>
+    <string name="Enemy_Map_String">敵の陣地</string>
+    <string name="end_message_win">あなたの勝利です</string>
+    <string name="end_message_lose">あなたの負けです</string>
+    <string name="choose_map_title_choose"> </string>
+    <string name="choose_map_title_points">箇所選んでください</string>
+    <string name="end_message">ゲームセット！</string>
+    <string name="tutorial_description">5箇所選んで、OKボタンを押してください</string>
+</resources>

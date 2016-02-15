@@ -1,0 +1,14 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="Enemy_Area_Title_Size">36sp</dimen>
+    <dimen name="Player_Area_Title_Size">24sp</dimen>
+
+    <dimen name="battle_attack_button_height">48dp</dimen>
+    <dimen name="battle_attack_button_width">48dp</dimen>
+
+    <dimen name="battle_defence_button_height">36dp</dimen>
+    <dimen name="battle_defence_button_width">36dp</dimen>
+</resources>
