@@ -1,13 +1,13 @@
 package com.digitalgame.battleship;
 
+import com.digitalgame.battleship.Enemy.EnemyState;
+import com.digitalgame.battleship.Service.DeliverServiceImpl;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import com.digitalgame.battleship.Service.DeliverServiceImpl;
-import com.digitalgame.battleship.Enemy.EnemyState;
 
 public class MainActivity extends Activity {
     @Override
@@ -32,6 +32,8 @@ public class MainActivity extends Activity {
         stopService(new Intent(getApplication(), DeliverServiceImpl.class));
         super.onDestroy();
     }
+
+
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
