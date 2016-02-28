@@ -1,4 +1,4 @@
-package com.digitalgame.battleship.Map;
+package com.digitalgame.battleship.MapArea;
 
 public class MapStateImpl implements MapState {
     public AreaState[][] mArea = new AreaState[MAX_LENGTH][MAX_LENGTH];

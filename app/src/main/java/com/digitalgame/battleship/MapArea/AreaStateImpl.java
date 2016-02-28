@@ -1,4 +1,4 @@
-package com.digitalgame.battleship.Map;
+package com.digitalgame.battleship.MapArea;
 
 
 public class AreaStateImpl implements AreaState {

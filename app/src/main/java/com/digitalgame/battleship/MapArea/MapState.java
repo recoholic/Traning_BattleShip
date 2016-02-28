@@ -1,4 +1,4 @@
-package com.digitalgame.battleship.Map;
+package com.digitalgame.battleship.MapArea;
 
 public interface MapState {
     int MAX_LENGTH = 5;

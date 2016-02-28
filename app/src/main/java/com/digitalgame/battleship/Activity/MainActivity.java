@@ -1,6 +1,7 @@
-package com.digitalgame.battleship;
+package com.digitalgame.battleship.Activity;
 
 import com.digitalgame.battleship.Enemy.EnemyState;
+import com.digitalgame.battleship.R;
 import com.digitalgame.battleship.Service.DeliverServiceImpl;
 
 import android.app.Activity;
@@ -10,6 +11,28 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent();
+            intent.setClass(getApplicationContext(), MainBattleActivity.class);
+            switch (v.getId()) {
+                case R.id.TutorialModeButton:
+                    intent.putExtra(MainBattleActivity.MODE_SELECT, EnemyState.TUTORIAL);
+                    break;
+                case R.id.SinglePlayButton:
+                    intent.putExtra(MainBattleActivity.MODE_SELECT, EnemyState.SIMPLE);
+                    break;
+                case R.id.RandomPlayButton:
+                    intent.putExtra(MainBattleActivity.MODE_SELECT, EnemyState.RANDOM);
+                    break;
+                default:
+                    break;
+            }
+            startActivity(intent);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,28 +55,4 @@ public class MainActivity extends Activity {
         stopService(new Intent(getApplication(), DeliverServiceImpl.class));
         super.onDestroy();
     }
-
-
-
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent();
-            intent.setClass(getApplicationContext(), MainBattle.class);
-            switch (v.getId()) {
-                case R.id.TutorialModeButton:
-                    intent.putExtra(MainBattle.MODE_SELECT, EnemyState.TUTORIAL);
-                    break;
-                case R.id.SinglePlayButton:
-                    intent.putExtra(MainBattle.MODE_SELECT, EnemyState.SIMPLE);
-                    break;
-                case R.id.RandomPlayButton:
-                    intent.putExtra(MainBattle.MODE_SELECT, EnemyState.RANDOM);
-                    break;
-                default:
-                    break;
-            }
-            startActivity(intent);
-        }
-    };
 }

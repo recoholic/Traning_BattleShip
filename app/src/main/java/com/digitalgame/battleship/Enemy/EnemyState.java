@@ -1,7 +1,7 @@
 package com.digitalgame.battleship.Enemy;
 
-import com.digitalgame.battleship.Map.MapState;
-import com.digitalgame.battleship.Map.MapStateImpl;
+import com.digitalgame.battleship.MapArea.MapState;
+import com.digitalgame.battleship.MapArea.MapStateImpl;
 import com.digitalgame.battleship.Util;
 
 public class EnemyState {

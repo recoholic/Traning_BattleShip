@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.IBinder;
 
 import com.digitalgame.battleship.Enemy.EnemyState;
-import com.digitalgame.battleship.Map.MapState;
-import com.digitalgame.battleship.Map.MapStateImpl;
+import com.digitalgame.battleship.MapArea.MapState;
+import com.digitalgame.battleship.MapArea.MapStateImpl;
 
 public class DeliverServiceImpl extends Service implements DeliverService{
     private static MapState mPlayerMap;
@@ -33,6 +33,11 @@ public class DeliverServiceImpl extends Service implements DeliverService{
         mEnemyMap = enemyState.MakeState(mode);
     }
 
+    public static void initDeliver() {
+        mPlayerMap = new MapStateImpl();
+        mEnemyMap = new MapStateImpl();
+    }
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         initDeliver();
@@ -43,10 +48,5 @@ public class DeliverServiceImpl extends Service implements DeliverService{
     public IBinder onBind(Intent intent) {
         // TODO: Return the communication channel to the service.
         throw new UnsupportedOperationException("Not yet implemented");
-    }
-
-    public static void initDeliver() {
-        mPlayerMap = new MapStateImpl();
-        mEnemyMap = new MapStateImpl();
     }
 }
