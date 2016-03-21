@@ -2,14 +2,11 @@
     <string name="app_name">BattleShip</string>
     <string name="title_activity_single_battle" translatable="false">SingleBattle</string>
     <string name="title_activity_choose_player_point" translatable="false">PlayerChoose</string>
-    <string name="title_service_deliver" translatable="false">MapDeliver</string>
 
     <string name="play_start" translatable="false">Lets Play</string>
 
-    <string name="Dialog_Title">Is this all right?</string>
+    <string name="confirm_dialog_title">Is this all right?</string>
     <string name="Dialog_Yes">Yes</string>
-    <string name="Dialog_No" translatable="false">No</string>
-    <string name="Dialog_Cancel" translatable="false">Cancel</string>
 
     <string name="random_play_mode" translatable="false">Random Play</string>
     <string name="single_play_mode" translatable="false">Single Play</string>
@@ -30,7 +27,6 @@
 
     <string name="end_message_win">You Win !</string>
     <string name="end_message_lose">You lose</string>
-    <string name="end_message">Game End!</string>
 
     <string name="battle_column_A" translatable="false">A</string>
     <string name="battle_column_B" translatable="false">B</string>
@@ -43,4 +39,7 @@
     <string name="battle_row_3" translatable="false">3</string>
     <string name="battle_row_4" translatable="false">4</string>
     <string name="battle_row_5" translatable="false">5</string>
+
+    <string name="back_key_dialog_title">Do you want to back?</string>
+    <string name="back_key_dialog_message">Game is cancel</string>
 </resources>

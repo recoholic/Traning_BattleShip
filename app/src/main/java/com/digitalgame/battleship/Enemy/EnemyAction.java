@@ -1,12 +1,12 @@
 package com.digitalgame.battleship.Enemy;
 
-import com.digitalgame.battleship.Service.DeliverServiceImpl;
+import com.digitalgame.battleship.Utils.GameState;
 import com.digitalgame.battleship.MapArea.MapState;
-import com.digitalgame.battleship.Util;
+import com.digitalgame.battleship.Utils.Util;
 
 public class EnemyAction {
     public static int[] getRandom() {
-        MapState EnemyMap = DeliverServiceImpl.getPlayerMap(DeliverServiceImpl.IS_ENEMY);
+        MapState EnemyMap = GameState.getInstance().getEnemyMap();
         int attackLine;
         int attackColumn;
 
@@ -22,7 +22,7 @@ public class EnemyAction {
             }
         }
 
-        DeliverServiceImpl.setPlayerMap(EnemyMap, DeliverServiceImpl.IS_ENEMY);
+        GameState.getInstance().setEnemyMap(EnemyMap);
         return new int[]{attackLine, attackColumn};
     }
 }

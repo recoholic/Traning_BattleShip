@@ -1,37 +1,27 @@
-package com.digitalgame.battleship.Activity;
+package com.digitalgame.battleship.Activities;
+
+import com.digitalgame.battleship.Dialogs.BackKeyDialog;
+import com.digitalgame.battleship.Enemy.EnemyAction;
+import com.digitalgame.battleship.Utils.BattleShipConstants;
+import com.digitalgame.battleship.Utils.GameState;
+import com.digitalgame.battleship.MapArea.MapState;
+import com.digitalgame.battleship.R;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.DialogFragment;
-import android.app.FragmentManager;
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.digitalgame.battleship.Dialogs.FinMessageDialog;
-import com.digitalgame.battleship.Enemy.EnemyAction;
-import com.digitalgame.battleship.Enemy.EnemyState;
-import com.digitalgame.battleship.GameState;
-import com.digitalgame.battleship.MapArea.MapState;
-import com.digitalgame.battleship.R;
-import com.digitalgame.battleship.Service.DeliverServiceImpl;
-
 public class MainBattleActivity extends Activity {
-    public static final String MODE_SELECT = "SelectModeString";
-    private static final int COUNT_START = 0;
-    private static final int COUNT_END = 4;
 
-    private GameState mGameState;
     private MapState mEnemyMap;
     private MapState mPlayerMap;
-    private int mEnemyHitCount;
-    private int mPlayerHitCount;
-    private String mCommand;
-
-    private TextView mPlayerScore;
-    private TextView mEnemyScore;
 
     //Set Buttons
     private Button
@@ -82,21 +72,19 @@ public class MainBattleActivity extends Activity {
 
             int[] choosePoint = mEnemyMap.getLineColumn(v.getId());
             if (mEnemyMap.isExist(v.getId())) {
+                // Select area, show hit effect and count hit
                 enemyButtonList[choosePoint[0]][choosePoint[1]]
                         .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_radio_24dp, 0, 0, 0);
-                mPlayerHitCount++;
-                if (mPlayerHitCount > COUNT_END) {
-                    mGameState.setGameEnd();
-                    mGameState.setPlayerWin();
-                }
+                mEnemyMap.setHitCount();
             } else {
+                // miss
                 enemyButtonList[choosePoint[0]][choosePoint[1]]
                         .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_close_24dp, 0, 0, 0);
             }
-            setScore();
 
-            if (mGameState.getGameNow()) {
-                showDialogFragment();
+            setScore();
+            if (mEnemyMap.isLose()) {
+                showDialogFragment(mEnemyMap.getOwner());
             }
 
             enemyAction();
@@ -108,83 +96,60 @@ public class MainBattleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_battle);
 
+        mPlayerMap = GameState.getInstance().getPlayerMap();
+        mPlayerMap.setWidgetId(playerButtonId);
+        mEnemyMap = GameState.getInstance().getEnemyMap();
+        mEnemyMap.setWidgetId(enemyButtonId);
+
         initButton();
         initScoreArea();
-        mEnemyHitCount = COUNT_START;
-        mPlayerHitCount = COUNT_START;
-        setScore();
-
-        mGameState = GameState.getState();
-        mGameState.initGameState();
-
-        Intent intent = getIntent();
-        mCommand = intent.getStringExtra(MODE_SELECT);
+        showPlayerPosition();
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        if (!mGameState.isChooseAlready()) {
-            if (mCommand.equals(EnemyState.TUTORIAL)) {
-                startActivity(new Intent(getApplicationContext(), TutorialPlayer.class));
-            } else {
-                startActivity(new Intent(getApplicationContext(), ChoosePlayerActivity.class));
-            }
-        }
-
-        if (mGameState.isDeliverAlready()) {
-            mPlayerMap = DeliverServiceImpl.getPlayerMap(DeliverServiceImpl.IS_PLAYER);
-            mPlayerMap.setWidgetId(playerButtonId);
-            showPlayerPosition();
-
-            DeliverServiceImpl.setEnemyMode(mCommand);
-            mEnemyMap = DeliverServiceImpl.getPlayerMap(DeliverServiceImpl.IS_ENEMY);
-            mEnemyMap.setWidgetId(enemyButtonId);
-        }
+    public void onBackPressed() {
+        DialogFragment dialogFragment = new BackKeyDialog();
+        dialogFragment.setCancelable(false);
+        dialogFragment.show(getFragmentManager(), BackKeyDialog.BACK_KEY_DIALOG);
     }
 
     private void initScoreArea() {
-        mPlayerScore = (TextView) findViewById(R.id.playerScoreCount);
-        mEnemyScore = (TextView) findViewById(R.id.enemyScoreCount);
+        TextView playerMax = (TextView) findViewById(R.id.playerCount);
+        playerMax.setText(String.valueOf(mPlayerMap.getCountEnd()));
 
-        TextView playerMax;
-        playerMax = (TextView) findViewById(R.id.playerCount);
-        playerMax.setText(String.valueOf(COUNT_END + 1));
+        TextView enemyMax = (TextView) findViewById(R.id.enemyCount);
+        enemyMax.setText(String.valueOf(mEnemyMap.getCountEnd()));
 
-        TextView enemyMax;
-        enemyMax = (TextView) findViewById(R.id.enemyCount);
-        enemyMax.setText(String.valueOf(COUNT_END + 1));
-
-        mEnemyHitCount = COUNT_START;
-        mPlayerHitCount = COUNT_START;
         setScore();
     }
 
     private void enemyAction() {
         int[] damagePoint = EnemyAction.getRandom();
         if (mPlayerMap.isExist(damagePoint[0], damagePoint[1])) {
+            // Select area, show hit effect and count hit
             playerButtonList[damagePoint[0]][damagePoint[1]]
                     .setBackgroundColor(Color.RED);
-            mEnemyHitCount++;
-            if (mEnemyHitCount > COUNT_END) {
-                mGameState.setGameEnd();
-            }
+            mPlayerMap.setHitCount();
         } else {
+            // miss
             playerButtonList[damagePoint[0]][damagePoint[1]]
                     .setBackgroundColor(Color.BLACK);
         }
 
         setScore();
-        if (mGameState.getGameNow()) {
-            showDialogFragment();
+        if (mPlayerMap.isLose()) {
+            showDialogFragment(mPlayerMap.getOwner());
         }
     }
 
-    private void showDialogFragment() {
-        FragmentManager manager = getFragmentManager();
-        DialogFragment dialog;
-        dialog = new FinMessageDialog();
-        dialog.show(manager, "dialog");
+    private void showDialogFragment(int player) {
+        Bundle arguments = new Bundle();
+        arguments.putInt(BattleShipConstants.BUNDLE_PLAYER, player);
+
+        DialogFragment dialog = new FinMessageDialog();
+        dialog.setArguments(arguments);
+        dialog.setCancelable(false);
+        dialog.show(getFragmentManager(), FinMessageDialog.FIN_MESSAGE_DIALOG);
     }
 
     private void showPlayerPosition() {
@@ -199,8 +164,10 @@ public class MainBattleActivity extends Activity {
     }
 
     private void setScore() {
-        mPlayerScore.setText(String.valueOf(mPlayerHitCount));
-        mEnemyScore.setText(String.valueOf(mEnemyHitCount));
+        TextView scoreOfPlayer = (TextView) findViewById(R.id.playerScoreCount);
+        scoreOfPlayer.setText(String.valueOf(mPlayerMap.getHitCount()));
+        TextView scoreOfEnemy = (TextView) findViewById(R.id.enemyScoreCount);
+        scoreOfEnemy.setText(String.valueOf(mEnemyMap.getHitCount()));
     }
 
     private void initButton() {
@@ -222,6 +189,42 @@ public class MainBattleActivity extends Activity {
             for (int j = 0; j < MapState.MAX_LENGTH; j++) {
                 playerButtonList[i][j] = (Button) findViewById(playerButtonId[i][j]);
             }
+        }
+    }
+
+    public static class FinMessageDialog extends DialogFragment {
+        public static final String FIN_MESSAGE_DIALOG = "FinMessageDialogTag";
+
+        public static FinMessageDialog newInstance(int title) {
+            FinMessageDialog frag = new FinMessageDialog();
+            Bundle args = new Bundle();
+            args.putInt("title", title);
+            frag.setArguments(args);
+            return frag;
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            if (MapState.ENEMY == getArguments().getInt(BattleShipConstants.BUNDLE_PLAYER)) {
+                builder.setTitle(R.string.end_message_win);
+            } else {
+                builder.setTitle(R.string.end_message_lose);
+            }
+            builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.setCanceledOnTouchOutside(false);
+            return dialog;
+        }
+
+        @Override
+        public void onDestroyView() {
+            super.onDestroyView();
+            getActivity().finish();
         }
     }
 }

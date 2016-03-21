@@ -1,4 +1,4 @@
-package com.digitalgame.battleship;
+package com.digitalgame.battleship.Utils;
 
 import java.util.Random;
 

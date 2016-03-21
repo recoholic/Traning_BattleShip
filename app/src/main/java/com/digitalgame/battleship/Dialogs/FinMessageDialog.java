@@ -1,27 +1,30 @@
 package com.digitalgame.battleship.Dialogs;
 
+import com.digitalgame.battleship.R;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
-import com.digitalgame.battleship.GameState;
-import com.digitalgame.battleship.R;
-
 public class FinMessageDialog extends DialogFragment {
-    private GameState mGameState;
+    public static final String FIN_MESSAGE_DIALOG = "FinMessageDialogTag";
+
+    public static FinMessageDialog newInstance(int title) {
+        FinMessageDialog frag = new FinMessageDialog();
+        Bundle args = new Bundle();
+        args.putInt("title", title);
+        frag.setArguments(args);
+        return frag;
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        mGameState = GameState.getState();
-        if(mGameState.isPlayerWin()) {
-            builder.setTitle(R.string.end_message_win);
-        } else {
-            builder.setTitle(R.string.end_message_lose);
-        }
-        builder.setPositiveButton(R.string.Dialog_Yes, new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.end_message_win);
+        builder.setTitle(R.string.end_message_lose);
+        builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }
