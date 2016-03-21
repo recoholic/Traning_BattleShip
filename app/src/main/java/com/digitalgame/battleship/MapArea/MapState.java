@@ -1,6 +1,8 @@
 package com.digitalgame.battleship.MapArea;
 
 public interface MapState {
+    int PLAYER = 0;
+    int ENEMY = 1;
     int MAX_LENGTH = 5;
 
     void setWidgetId(int widgetId[][]);
@@ -24,4 +26,16 @@ public interface MapState {
     boolean checkDuplicate(MapState mapState);
 
     void addMap(MapState mapState);
+
+    int getOwner();
+
+    void setOwner(int player);
+
+    boolean isLose();
+
+    void setHitCount();
+
+    int getHitCount();
+
+    int getCountEnd();
 }

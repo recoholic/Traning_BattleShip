@@ -2,18 +2,20 @@ package com.digitalgame.battleship.MapArea;
 
 public class MapStateImpl implements MapState {
     public AreaState[][] mArea = new AreaState[MAX_LENGTH][MAX_LENGTH];
+    private int owner;
+    private int countEnd;
+    private int hitCount;
+    private boolean loseFlag;
 
     public MapStateImpl() {
+        loseFlag = false;
+        countEnd = 0;
+        hitCount = 0;
         for (int i = 0; i < MAX_LENGTH; i++) {
             for (int j = 0; j < MAX_LENGTH; j++) {
                 mArea[i][j] = new AreaStateImpl();
             }
         }
-    }
-
-    @Override
-    public void setWidgetId(int line, int column, int widgetId) {
-        mArea[line][column].setWidgetId(widgetId);
     }
 
     @Override
@@ -26,6 +28,11 @@ public class MapStateImpl implements MapState {
     }
 
     @Override
+    public void setWidgetId(int line, int column, int widgetId) {
+        mArea[line][column].setWidgetId(widgetId);
+    }
+
+    @Override
     public void setHitArea(int widgetId) {
         int[] point = getLineColumn(widgetId);
         setHitArea(point[0], point[1]);
@@ -34,6 +41,7 @@ public class MapStateImpl implements MapState {
     @Override
     public void setHitArea(int line, int column) {
         mArea[line][column].setExist();
+        countEnd++;
     }
 
     @Override
@@ -85,10 +93,48 @@ public class MapStateImpl implements MapState {
     public void addMap(MapState mapState) {
         for (int i = 0; i < MAX_LENGTH; i++) {
             for (int j = 0; j < MAX_LENGTH; j++) {
-                if(mapState.isExist(i, j)) {
+                if (mapState.isExist(i, j)) {
                     mArea[i][j].setExist();
                 }
             }
         }
     }
+
+    @Override
+    public int getOwner() {
+        return owner;
+    }
+
+    @Override
+    public void setOwner(int owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public boolean isLose() {
+        return loseFlag;
+    }
+
+    @Override
+    public void setHitCount() {
+        hitCount++;
+        checkEnd();
+    }
+
+    @Override
+    public int getHitCount() {
+        return hitCount;
+    }
+
+    public int getCountEnd() {
+        return countEnd;
+    }
+
+    private void checkEnd() {
+        if (hitCount >= countEnd) {
+            loseFlag = true;
+        }
+    }
+
+
 }

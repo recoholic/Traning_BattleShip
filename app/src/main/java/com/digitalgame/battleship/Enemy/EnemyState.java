@@ -1,13 +1,11 @@
 package com.digitalgame.battleship.Enemy;
 
+import com.digitalgame.battleship.Utils.BattleShipConstants;
 import com.digitalgame.battleship.MapArea.MapState;
 import com.digitalgame.battleship.MapArea.MapStateImpl;
-import com.digitalgame.battleship.Util;
+import com.digitalgame.battleship.Utils.Util;
 
 public class EnemyState {
-    public static final String TUTORIAL = "Tutorial";
-    public static final String SIMPLE = "Simple";
-    public static final String RANDOM = "Random";
 
     private static final int MAX_SERIES = 3;
     private static final int MAX_SELECT_AREA = 6;
@@ -15,13 +13,13 @@ public class EnemyState {
     public EnemyState() {
     }
 
-    public MapState MakeState(String Command) {
+    public MapState makeState(String Command) {
         switch (Command) {
-            case TUTORIAL:
+            case BattleShipConstants.TUTORIAL:
                 return Tutorial();
-            case SIMPLE:
+            case BattleShipConstants.SIMPLE:
                 return Simple();
-            case RANDOM:
+            case BattleShipConstants.RANDOM:
                 return Random();
         }
 
