@@ -2,10 +2,10 @@ package com.digitalgame.battleship.Activities;
 
 import com.digitalgame.battleship.Dialogs.BackKeyDialog;
 import com.digitalgame.battleship.Enemy.EnemyAction;
-import com.digitalgame.battleship.Utils.BattleShipConstants;
-import com.digitalgame.battleship.Utils.GameState;
 import com.digitalgame.battleship.MapArea.MapState;
 import com.digitalgame.battleship.R;
+import com.digitalgame.battleship.Utils.BattleShipConstants;
+import com.digitalgame.battleship.Utils.GameState;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -65,31 +65,6 @@ public class MainBattleActivity extends Activity {
             {R.id.playerC1, R.id.playerC2, R.id.playerC3, R.id.playerC4, R.id.playerC5},
             {R.id.playerD1, R.id.playerD2, R.id.playerD3, R.id.playerD4, R.id.playerD5},
             {R.id.playerE1, R.id.playerE2, R.id.playerE3, R.id.playerE4, R.id.playerE5}};
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            v.setClickable(false);
-
-            int[] choosePoint = mEnemyMap.getLineColumn(v.getId());
-            if (mEnemyMap.isExist(v.getId())) {
-                // Select area, show hit effect and count hit
-                enemyButtonList[choosePoint[0]][choosePoint[1]]
-                        .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_radio_24dp, 0, 0, 0);
-                mEnemyMap.setHitCount();
-            } else {
-                // miss
-                enemyButtonList[choosePoint[0]][choosePoint[1]]
-                        .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_close_24dp, 0, 0, 0);
-            }
-
-            setScore();
-            if (mEnemyMap.isLose()) {
-                showDialogFragment(mEnemyMap.getOwner());
-            }
-
-            enemyAction();
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +97,32 @@ public class MainBattleActivity extends Activity {
 
         setScore();
     }
+
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            v.setClickable(false);
+
+            int[] choosePoint = mEnemyMap.getLineColumn(v.getId());
+            if (mEnemyMap.isExist(v.getId())) {
+                // Select area, show hit effect and count hit
+                enemyButtonList[choosePoint[0]][choosePoint[1]]
+                        .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_radio_24dp, 0, 0, 0);
+                mEnemyMap.setHitCount();
+            } else {
+                // miss
+                enemyButtonList[choosePoint[0]][choosePoint[1]]
+                        .setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_close_24dp, 0, 0, 0);
+            }
+
+            setScore();
+            if (mEnemyMap.isLose()) {
+                showDialogFragment(mEnemyMap.getOwner());
+            }
+
+            enemyAction();
+        }
+    };
 
     private void enemyAction() {
         int[] damagePoint = EnemyAction.getRandom();

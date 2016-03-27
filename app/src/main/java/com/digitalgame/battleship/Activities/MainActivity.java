@@ -1,8 +1,7 @@
 package com.digitalgame.battleship.Activities;
 
-import com.digitalgame.battleship.Utils.BattleShipConstants;
 import com.digitalgame.battleship.R;
-import com.digitalgame.battleship.Service.DeliverService;
+import com.digitalgame.battleship.Utils.BattleShipConstants;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -26,14 +25,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         Button singlePlayButton = (Button) findViewById(R.id.SinglePlayButton);
         singlePlayButton.setOnClickListener(this);
-
-        startService(new Intent(getApplication(), DeliverService.class));
-    }
-
-    @Override
-    protected void onDestroy() {
-        stopService(new Intent(getApplication(), DeliverService.class));
-        super.onDestroy();
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.digitalgame.battleship.Utils;
 import com.digitalgame.battleship.MapArea.MapState;
 
 public class GameState {
+
     private static GameState ourInstance = new GameState();
     private MapState playerMap;
     private MapState enemyMap;
